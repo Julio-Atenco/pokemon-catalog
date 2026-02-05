@@ -32,12 +32,15 @@ interface PokemonDetails {
 }
 
 async function getPokemonDetails(id: string) {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
-    cache: 'no-store'
-  })
-  if (!res.ok) throw new Error('Pokemon no encontrado')
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+
+  if (!res.ok) {
+    throw new Error('Pokemon no encontrado')
+  }
+
   return res.json()
 }
+
 
 const getTypeColor = (type: string) => {
   const colors: { [key: string]: string } = {
