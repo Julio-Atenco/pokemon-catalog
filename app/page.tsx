@@ -80,7 +80,7 @@ export default async function Home() {
           <div className="flex items-center justify-center gap-4 mb-2">
             <div className="w-12 h-12 bg-red-600 rounded-full border-4 border-white shadow-lg"></div>
             <h1 className="text-4xl sm:text-5xl font-bold text-red-600">
-              Pokédex
+              Pokedex
             </h1>
           </div>
         </div>
