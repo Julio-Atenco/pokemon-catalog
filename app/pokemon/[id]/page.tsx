@@ -31,6 +31,16 @@ interface PokemonDetails {
   }>
 }
 
+export async function generateStaticParams() {
+  const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+  const data = await res.json()
+
+  return data.results.map((_: any, index: number) => ({
+    id: String(index + 1),
+  }))
+}
+
+    
 async function getPokemonDetails(id: string) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
 
